@@ -1,6 +1,6 @@
 import urllib2
 '''
-Example: http://www.test.com/?pag=news&str=VIEW&id=ID-HERE&cmd=comment (Tested in MU Online)
+Example: http://www.test.com/?pag=news&str=VIEW&id=ID-HERE&cmd=comment
 '''
 get_url = raw_input("Informe a url com os parametros para o ataque: ")
 count = 0
